@@ -1,6 +1,5 @@
 import telebot
 from telebot import types
-import os
 
 # 🔹 Bot Token
 BOT_TOKEN = "7943930374:AAGH_fuU2ycZBL8muVum-9r-9nIjKks-F98"
@@ -24,7 +23,7 @@ def search_movie(message):
         bot.reply_to(message, "⚠️ ဇာတ်ကားနာမည်ကို ရိုက်ထည့်ပါ။")
         return
 
-    CHANNEL_ID = "@WinPyaeKyaw0078"
+    CHANNEL_ID = "@WinPyaeKyaw0078"  # Channel Username
     
     try:
         forwarded_messages = bot.forward_message(message.chat.id, CHANNEL_ID, message.message_id, disable_notification=True)
@@ -43,7 +42,7 @@ def user_count(message):
 # 📌 /broadcast Command (Admin မှလူတိုင်းကို Message ပို့နိုင်ရန်)
 @bot.message_handler(commands=['broadcast'])
 def broadcast_message(message):
-    admin_id = 123456789  # နင့် Telegram ID ကို ဒီမှာ ထည့်
+    admin_id = 1794465007  # @AceOse Admin ID
     if message.chat.id != admin_id:
         bot.reply_to(message, "❌ Admin မှသာ Broadcast ပို့နိုင်သည်။")
         return
